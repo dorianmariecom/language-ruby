@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Code
   class Parser
     class Nothing < Language

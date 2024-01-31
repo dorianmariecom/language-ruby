@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+require "English"
 require_relative "lib/language/version"
 
 Gem::Specification.new do |s|
@@ -7,8 +10,7 @@ Gem::Specification.new do |s|
   s.description = s.summary
   s.authors = ["Dorian Marié"]
   s.email = "dorian@dorianmarie.fr"
-  s.files = `git ls-files`.split($/)
-  s.test_files = s.files.grep(%r{^(test|spec|features)/})
+  s.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   s.require_paths = ["lib"]
   s.homepage = "https://github.com/dorianmariefr/language-ruby"
   s.license = "MIT"
