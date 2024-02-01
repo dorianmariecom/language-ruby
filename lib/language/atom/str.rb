@@ -8,7 +8,9 @@ class Language
       end
 
       def parse(parser)
-        raise Parser::Str::NotFound.new(parser, @string) unless parser.next?(@string)
+        unless parser.next?(@string)
+          raise Parser::Str::NotFound.new(parser, @string)
+        end
 
         parser.consume(@string.size)
       end
