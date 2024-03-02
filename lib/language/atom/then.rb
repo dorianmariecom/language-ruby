@@ -10,7 +10,12 @@ class Language
 
       def parse(parser)
         @parent.parse(parser)
-        parser.output = Output.from_raw(@block.call(parser.output.to_raw))
+
+        if parser.output.nil?
+          parser.buffer = @block.call(parser.buffer)
+        else
+          parser.output = Output.from_raw(@block.call(parser.output.to_raw))
+        end
       end
 
       def to_s

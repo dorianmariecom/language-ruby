@@ -18,6 +18,10 @@ class Language
       end
     end
 
+    def nil?
+      raw.nil?
+    end
+
     def to_raw
       if raw.is_a?(Array)
         raw.map(&:to_raw)
@@ -33,7 +37,7 @@ class Language
     end
 
     def present?
-      @raw != nil
+      !nil?
     end
 
     def ==(other)
