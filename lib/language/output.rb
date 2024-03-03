@@ -22,6 +22,19 @@ class Language
       raw.nil?
     end
 
+    def empty?
+      case @raw
+      when NilClass
+        true
+      when String
+        raw.empty?
+      when Array
+        raw.empty?
+      when Hash
+        raw.empty?
+      end
+    end
+
     def to_raw
       if raw.is_a?(Array)
         raw.map(&:to_raw)
@@ -37,7 +50,7 @@ class Language
     end
 
     def present?
-      !nil?
+      !nil? && !empty?
     end
 
     def ==(other)
