@@ -20,15 +20,16 @@ class Code
 
     class ThenWithBufferTransformed < Language
       def root
-        any.repeat(1).then { |buffer| buffer.upcase }
+        any.repeat(1).then(&:upcase)
       end
     end
 
     class ThenWithOutput < Language
       def root
-        any.repeat(1).aka(:something).then do |output|
-          output[:something].upcase
-        end
+        any
+          .repeat(1)
+          .aka(:something)
+          .then { |output| output[:something].upcase }
       end
     end
   end
@@ -40,11 +41,15 @@ RSpec.describe Language do
   end
 
   it "works with then with buffer" do
-    expect(Code::Parser::ThenWithBuffer.parse("something")).to eq("something-else")
+    expect(Code::Parser::ThenWithBuffer.parse("something")).to eq(
+      "something-else"
+    )
   end
 
   it "works with then with buffer transformed" do
-    expect(Code::Parser::ThenWithBufferTransformed.parse("something")).to eq("SOMETHING")
+    expect(Code::Parser::ThenWithBufferTransformed.parse("something")).to eq(
+      "SOMETHING"
+    )
   end
 
   it "works with then with output" do
