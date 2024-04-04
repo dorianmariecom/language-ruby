@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    language-ruby (0.8.3)
+    language-ruby (0.8.4)
       zeitwerk (~> 2)
 
 GEM
