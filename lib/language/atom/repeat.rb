@@ -30,7 +30,7 @@ class Language
         minimum = @minimum.zero? ? "" : @minimum.to_s
         maximum = @maximum.nil? ? "" : ", #{@maximum}"
         parenthesis =
-          minimum.empty? && maximum.empty? ? "" : "(#{minimum}#{maximum})"
+          (minimum.empty? && maximum.empty?) ? "" : "(#{minimum}#{maximum})"
 
         @parent ? "(#{@parent}).repeat#{parenthesis}" : "repeat#{parenthesis}"
       end
