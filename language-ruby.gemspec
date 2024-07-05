@@ -14,8 +14,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.homepage = "https://github.com/dorianmariecom/language-ruby"
   s.license = "MIT"
-
-  s.add_dependency "zeitwerk", "~> 2"
-
-  s.required_ruby_version = ">= 3.3.0"
+  s.add_dependency "zeitwerk"
 end

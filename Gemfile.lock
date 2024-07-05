@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     language-ruby (0.8.4)
-      zeitwerk (~> 2)
+      zeitwerk
 
 GEM
   remote: https://rubygems.org/
