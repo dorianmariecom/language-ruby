@@ -2,4 +2,4 @@
 
 require_relative "../language"
 
-Language::Version = Gem::Version.new("0.8.4")
+Language::Version = Gem::Version.new("0.9.0")
