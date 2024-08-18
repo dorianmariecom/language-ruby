@@ -6,7 +6,7 @@ require_relative "lib/language/version"
 Gem::Specification.new do |s|
   s.name = "language-ruby"
   s.version = ::Language::Version
-  s.summary = "A Parsing Expression Grammar (PEG) for making parsers"
+  s.summary = "parser dsl"
   s.description = s.summary
   s.authors = ["Dorian Marié"]
   s.email = "dorian@dorianmarie.fr"
