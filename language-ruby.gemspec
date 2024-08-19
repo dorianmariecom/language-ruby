@@ -15,4 +15,5 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/dorianmariecom/language-ruby"
   s.license = "MIT"
   s.add_dependency "zeitwerk"
+  s.add_dependency "dorian-arguments"
 end
