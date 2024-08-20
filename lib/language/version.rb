@@ -2,4 +2,5 @@
 
 require_relative "../language"
 
-Language::Version = Gem::Version.new("0.9.2")
+Language::Version =
+  Gem::Version.new(File.read(File.expand_path("../../../VERSION", __FILE__)))

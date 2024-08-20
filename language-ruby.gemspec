@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
-require "English"
-require_relative "lib/language/version"
-
 Gem::Specification.new do |s|
   s.name = "language-ruby"
-  s.version = ::Language::Version
+  s.version = File.read("VERSION").strip
   s.summary = "parser dsl"
   s.description = s.summary
   s.authors = ["Dorian Marié"]
