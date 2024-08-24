@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.email = "dorian@dorianmarie.fr"
   s.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   s.require_paths = ["lib"]
+  s.executables << "language"
   s.homepage = "https://github.com/dorianmariecom/language-ruby"
   s.license = "MIT"
   s.add_dependency "zeitwerk"
