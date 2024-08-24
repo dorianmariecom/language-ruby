@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "dorian/arguments"
+require_relative "../lib/language-ruby"
+
+parsed = Dorian::Arguments.parse(version: { alias: :v }, help: { alias: :h })
+
+if parsed.options.version
+  abort Language::Version.to_s
+else
+  abort parsed.help
+end
