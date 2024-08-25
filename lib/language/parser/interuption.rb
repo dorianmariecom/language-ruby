@@ -23,7 +23,7 @@ class Language
       end
 
       def column_index
-        cursor - input.lines[...line_index].map(&:size).sum
+        cursor - input.lines[...line_index].sum(&:size)
       end
 
       private

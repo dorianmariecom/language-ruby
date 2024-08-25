@@ -14,4 +14,5 @@ Gem::Specification.new do |s|
   s.license = "MIT"
   s.add_dependency "dorian-arguments"
   s.add_dependency "zeitwerk"
+  s.metadata["rubygems_mfa_required"] = "true"
 end
