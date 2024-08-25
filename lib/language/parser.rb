@@ -19,7 +19,7 @@ class Language
         raise NotEndOfInput, self
       end
 
-      @output.present? ? @output : Output.new(@buffer.empty? ? nil : @buffer)
+      @output.presence || Output.new(@buffer.empty? ? nil : @buffer)
     end
 
     def consume(n)
