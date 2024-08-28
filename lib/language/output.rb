@@ -24,11 +24,7 @@ class Language
       case @raw
       when NilClass
         true
-      when String
-        raw.empty?
-      when Array
-        raw.empty?
-      when Hash
+      when String, Array, Hash
         raw.empty?
       end
     end
@@ -61,9 +57,7 @@ class Language
 
     def []=(key, value)
       case @raw
-      when NilClass
-        @raw = { key => value }
-      when String
+      when NilClass, String
         @raw = { key => value }
       when Array
         @raw << Output.new({ key => value })
@@ -80,9 +74,7 @@ class Language
         case other.raw
         when String
           @raw += other.raw
-        when Array
-          @raw = other.raw
-        when Hash
+        when Array, Hash
           @raw = other.raw
         end
       when Array
@@ -96,9 +88,7 @@ class Language
         end
       when Hash
         case other.raw
-        when String
-          nil
-        when Array
+        when String, Array
           nil
         when Hash
           @raw.merge!(other.raw)
@@ -110,29 +100,21 @@ class Language
       case @raw
       when NilClass
         case other.raw
-        when String
-          @raw = [other]
-        when Array
-          @raw = [other]
-        when Hash
+        when String, Array, Hash
           @raw = [other]
         end
       when String
         case other.raw
         when String
           @raw += other.raw
-        when Array
-          @raw = [other]
-        when Hash
+        when Array, Hash
           @raw = [other]
         end
       when Array
         @raw << other
       when Hash
         case other.raw
-        when String
-          nil
-        when Array
+        when String, Array
           nil
         when Hash
           @raw.merge!(other.raw)

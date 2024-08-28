@@ -1,10 +1,10 @@
 ---
 AllCops:
   Exclude:
-    - "*/node_modules/**/*"
-    - "*/vendor/**/*"
-    - node_modules/**/*
-    - vendor/**/*
+  - "*/node_modules/**/*"
+  - "*/vendor/**/*"
+  - node_modules/**/*
+  - vendor/**/*
   NewCops: enable
 Layout/ClosingHeredocIndentation:
   Enabled: false
@@ -24,9 +24,13 @@ Layout/MultilineOperationIndentation:
   Enabled: false
 Lint/EmptyClass:
   Enabled: false
+Lint/MissingSuper:
+  Enabled: false
 Lint/PercentStringArray:
   Enabled: false
 Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+Lint/SuppressedException:
   Enabled: false
 Metrics/AbcSize:
   Enabled: false
@@ -89,12 +93,10 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   Enabled: false
 require:
-  - rubocop-factory_bot
-  - rubocop-performance
-  - rubocop-rails
-  - rubocop-rake
-  - rubocop-rspec
-  - rubocop-rspec_rails
-  - rubocop-capybara
-Lint/MissingSuper:
-  Enabled: false
+- rubocop-factory_bot
+- rubocop-performance
+- rubocop-rails
+- rubocop-rake
+- rubocop-rspec
+- rubocop-rspec_rails
+- rubocop-capybara
