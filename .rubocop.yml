@@ -1,10 +1,10 @@
 ---
 AllCops:
   Exclude:
-  - "*/node_modules/**/*"
-  - "*/vendor/**/*"
-  - node_modules/**/*
-  - vendor/**/*
+    - "*/node_modules/**/*"
+    - "*/vendor/**/*"
+    - node_modules/**/*
+    - vendor/**/*
   NewCops: enable
 Layout/ClosingHeredocIndentation:
   Enabled: false
@@ -52,9 +52,13 @@ Naming/FileName:
   Enabled: false
 Naming/MethodParameterName:
   Enabled: false
+Naming/VariableNumber:
+  Enabled: false
 Performance/UnfreezeString:
   Enabled: false
 RSpec/AnyInstance:
+  Enabled: false
+RSpec/ContextWording:
   Enabled: false
 RSpec/DescribeClass:
   Enabled: false
@@ -93,10 +97,12 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   Enabled: false
 require:
-- rubocop-factory_bot
-- rubocop-performance
-- rubocop-rails
-- rubocop-rake
-- rubocop-rspec
-- rubocop-rspec_rails
-- rubocop-capybara
+  - rubocop-factory_bot
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-capybara
+Style/CaseEquality:
+  Enabled: false
