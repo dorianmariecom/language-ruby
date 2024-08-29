@@ -118,3 +118,7 @@ require:
   - rubocop-rspec
   - rubocop-rspec_rails
   - rubocop-capybara
+Rails/Delegate:
+  Enabled: false
+Rails/Presence:
+  Enabled: false

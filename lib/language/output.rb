@@ -18,7 +18,9 @@ class Language
       end
     end
 
-    delegate :nil?, to: :raw
+    def nil?
+      raw.nil?
+    end
 
     def empty?
       case @raw
@@ -44,16 +46,20 @@ class Language
     end
 
     def present?
-      present?
+      !nil? && !empty?
     end
 
     def ==(other)
       raw == (other.is_a?(Output) ? other.raw : other)
     end
 
-    delegate :to_s, to: :raw
+    def to_s
+      raw.to_s
+    end
 
-    delegate :inspect, to: :raw
+    def inspect
+      raw.inspect
+    end
 
     def []=(key, value)
       case @raw
