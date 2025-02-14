@@ -25,7 +25,7 @@ class Language
       end
 
       def to_s
-        "#{@left} >> #{@right}".to_s
+        "#{@left} >> #{@right}"
       end
     end
   end
