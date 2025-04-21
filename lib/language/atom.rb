@@ -14,6 +14,10 @@ class Language
       Absent.new(parent: self)
     end
 
+    def present
+      Present.new(parent: self)
+    end
+
     def ignore
       Ignore.new(parent: self)
     end

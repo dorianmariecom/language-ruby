@@ -9,6 +9,10 @@ class Language
     Atom::Absent.new(parent: new)
   end
 
+  def self.present
+    Atom::Present.new(parent: new)
+  end
+
   def self.ignore
     Atom::Ignore.new(parent: new)
   end

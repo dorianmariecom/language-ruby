@@ -32,6 +32,13 @@ class Code
           .then { |output| output[:something].upcase }
       end
     end
+
+    class BooleanPresent < Language
+      def root
+        str("t").aka(:boolean) << str(" ").present << str(" ") << str("rest").aka(:string) |
+          str("trest").aka(:string)
+      end
+    end
   end
 end
 
@@ -54,5 +61,17 @@ RSpec.describe Language do
 
   it "works with then with output" do
     expect(Code::Parser::ThenWithOutput.parse("value")).to eq("VALUE")
+  end
+
+  it "works with present (string)" do
+    expect(Code::Parser::BooleanPresent.parse("trest")).to eq(
+      { string: "trest" }
+    )
+  end
+
+  it "works with present (boolean and string)" do
+    expect(Code::Parser::BooleanPresent.parse("t rest")).to eq(
+      { boolean: "t", string: "rest" }
+    )
   end
 end
