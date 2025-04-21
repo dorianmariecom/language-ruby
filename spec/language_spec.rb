@@ -35,8 +35,10 @@ class Code
 
     class BooleanPresent < Language
       def root
-        str("t").aka(:boolean) << str(" ").present << str(" ") << str("rest").aka(:string) |
-          str("trest").aka(:string)
+        (
+          str("t").aka(:boolean) << str(" ").present << str(" ") <<
+            str("rest").aka(:string)
+        ) | str("trest").aka(:string)
       end
     end
   end
