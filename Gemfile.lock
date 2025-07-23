@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    language-ruby (1.2.0)
+    language-ruby (1.2.1)
       dorian-arguments
       zeitwerk
 
