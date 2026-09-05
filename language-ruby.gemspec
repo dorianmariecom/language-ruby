@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.executables << "language"
   s.homepage = "https://github.com/dorianmariecom/language-ruby"
   s.license = "MIT"
-  s.add_dependency "dorian-arguments"
-  s.add_dependency "zeitwerk"
+  s.add_dependency "dorian-arguments", ">= 2.0.1", "< 3"
+  s.add_dependency "zeitwerk", ">= 2.8.3", "< 3"
   s.metadata["rubygems_mfa_required"] = "true"
   s.required_ruby_version = ">= 4.0"
 end
